@@ -1,15 +1,16 @@
 This is where we put new tweets:
 
 
-<%= simple_form_for @tweet do |f| %>
+<%= simple_form_for @tweet, url: tweets_path, method: 'post' do |f| %>
+
 	<%= f.input "content" %>
-	<%= f.button "submit" %>
+	<%= f.button "submit", "Create Tweet" %>
 
 <% end %>
 
-Here are all the tweets ever made:
+<b>Here are all the tweets ever made:</b><br /><br />
 
 <% @tweets.each do |tweet| %>
-	<%= tweet.content %>
+	<%= tweet.content %><br />
 
 <% end %>
